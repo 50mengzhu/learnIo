@@ -1,7 +1,11 @@
+/**
+ * copyright@daixiao
+ * file encoding: gbk
+ */
 package com.dx.bio;
 
-import static com.dx.io.NetConstants.NET_BUFFER;
-import static com.dx.io.NetConstants.SERVER_PORT;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import static com.dx.io.NetConstants.NET_BUFFER;
+import static com.dx.io.NetConstants.SERVER_PORT;
 
 /**
  * Bio 的一个服务端。
