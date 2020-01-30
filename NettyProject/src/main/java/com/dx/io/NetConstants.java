@@ -17,6 +17,16 @@ public class NetConstants {
     /** 网络中读取数据的缓冲池大小 */
     public static final Integer NET_BUFFER = 1024;
 
+    /** 连接主机的域名 */
+    public static final String HOST = "localhost";
+
+    /** 链接主机的 IP */
+    public static final String HOST_IP = "127.0.0.1";
+
+
     /** 设置超时时间 */
     public static final int TIMEOUT = 1;
+
+    /** 设置 1000 的超时时间 */
+    public static final int TIMEOUT_THOUSAND = 1000;
 }
