@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.selector;
 
@@ -17,20 +17,20 @@ import static com.dx.io.NetConstants.HOST;
 import static com.dx.io.NetConstants.SERVER_PORT;
 
 /**
- * 使用 NIO 书写的客户端
+ * 浣跨敤 NIO 涔﹀啓鐨勫鎴风
  *
  * @author daixiao
  */
 public class ClientSelectorDemo {
 
-    /** 日志记录对象 */
+    /** 鏃ュ織璁板綍瀵硅薄 */
     private static Log log = LogFactory.getLog(ClientSelectorDemo.class);
 
     public static void main(String[] args) {
         try (SocketChannel socketChannel = SocketChannel.open()) {
             socketChannel.configureBlocking(false);
 
-            // 如果链接不上就停止等待，不会造成阻塞
+            // 濡傛灉閾炬帴涓嶄笂灏卞仠姝㈢瓑寰咃紝涓嶄細閫犳垚闃诲
             if (!socketChannel.connect(new InetSocketAddress(HOST, SERVER_PORT))) {
                 while (!socketChannel.finishConnect()) {
                     log.info("connect to server need server time");
@@ -40,7 +40,6 @@ public class ClientSelectorDemo {
             String greet = "Hello, World!~";
             ByteBuffer buffer = ByteBuffer.wrap(greet.getBytes(StandardCharsets.UTF_8));
             socketChannel.write(buffer);
-            System.in.read();
         } catch (IOException e) {
             log.warn("create channel failed!", e);
         }

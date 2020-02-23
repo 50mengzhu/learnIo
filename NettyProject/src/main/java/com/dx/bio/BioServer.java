@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.bio;
 
@@ -24,27 +24,27 @@ import static com.dx.io.NetConstants.NET_BUFFER;
 import static com.dx.io.NetConstants.SERVER_PORT;
 
 /**
- * Bio µÄÒ»¸ö·şÎñ¶Ë¡£
+ * Bio çš„ä¸€ä¸ªæœåŠ¡ç«¯ã€‚
  *
  * @author daixiao
  */
 public class BioServer {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó¡£ */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ã€‚ */
     private static Log log = LogFactory.getLog(BioServer.class);
 
     public static void main(final String[] args) {
-        // ´´½¨Ò»¸öÏß³Ì³Ø
+        // åˆ›å»ºä¸€ä¸ªçº¿ç¨‹æ± 
         ThreadFactory factory = new ThreadFactoryBuilder()
                 .setNameFormat("nio-pool-test-%d").build();
         ExecutorService pool = new ThreadPoolExecutor(5, 200,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingDeque<Runnable>(NET_BUFFER), factory);
-        // ´´½¨Ò»¸öÏß³ÌÏìÓ¦¿Í»§¶Ë
+        // åˆ›å»ºä¸€ä¸ªçº¿ç¨‹å“åº”å®¢æˆ·ç«¯
         try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
             log.info(String.format("server is listening on port %d", SERVER_PORT));
             while (true) {
-                // Õë¶Ô½øÀ´Á¬½ÓµÄ¿Í»§¶Ë½øĞĞ´¦Àí
+                // é’ˆå¯¹è¿›æ¥è¿æ¥çš„å®¢æˆ·ç«¯è¿›è¡Œå¤„ç†
                 final Socket socket = serverSocket.accept();
                 log.info(String.format("a client connect to server: %s:%d",
                         socket.getInetAddress(), socket.getLocalPort()));
@@ -63,9 +63,9 @@ public class BioServer {
     }
 
     /**
-     * ´¦Àí¿Í»§¶ËĞÅÏ¢µÄ·½·¨
+     * å¤„ç†å®¢æˆ·ç«¯ä¿¡æ¯çš„æ–¹æ³•
      *
-     * @param socket ¿Í»§¶ËµÄ socket
+     * @param socket å®¢æˆ·ç«¯çš„ socket
      */
     public static void handleMsg(Socket socket) {
         log.info(String.format("current pid is %s, and thread name is %s",

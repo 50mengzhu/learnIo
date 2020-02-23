@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -14,22 +14,22 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 /**
- * Ê¹ÓÃ NIO ½øĞĞÎÄ¼şµÄÏà»¥¿½±´
- * Ö±½ÓÊ¹ÓÃ channel Ö®¼äµÄ¿½±´Í¨µÀ
+ * ä½¿ç”¨ NIO è¿›è¡Œæ–‡ä»¶çš„ç›¸äº’æ‹·è´
+ * ç›´æ¥ä½¿ç”¨ channel ä¹‹é—´çš„æ‹·è´é€šé“
  *
  * @author daixiao
  */
 public class NioCopyFile {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ */
     private static Log log = LogFactory.getLog(NioCopyFile.class);
 
     public static void main(String[] args) {
         try (FileInputStream inputStream = new FileInputStream("hello.txt");
              FileOutputStream outputStream = new FileOutputStream("helloCopy.txt")) {
             FileChannel srcChannel = inputStream.getChannel();
-            // µ÷ÓÃ transferFrom ·½·¨Ö±½Ó¿½±´
-            // ¶Ô±È NioCopyFileUsingBuffer Àà£¬Õâ¸ö·½·¨¾Í¼ò½àÁËĞí¶à
+            // è°ƒç”¨ transferFrom æ–¹æ³•ç›´æ¥æ‹·è´
+            // å¯¹æ¯” NioCopyFileUsingBuffer ç±»ï¼Œè¿™ä¸ªæ–¹æ³•å°±ç®€æ´äº†è®¸å¤š
             outputStream.getChannel().transferFrom(srcChannel, 0, srcChannel.size());
         } catch (FileNotFoundException e) {
             log.warn("file not found!", e);

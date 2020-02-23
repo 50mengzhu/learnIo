@@ -1,32 +1,32 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.io;
 
 /**
- * ¹ØÓÚÍøÂçÖĞµÄÒ»Ğ©³£ÓÃ²ÎÊı
+ * å…³äºç½‘ç»œä¸­çš„ä¸€äº›å¸¸ç”¨å‚æ•°
  *
  * @author daixiao
  */
 public class NetConstants {
 
-    /** ·şÎñ¶Ë¶Ë¿Ú */
+    /** æœåŠ¡ç«¯ç«¯å£ */
     public static final Integer SERVER_PORT = 6666;
 
-    /** ÍøÂçÖĞ¶ÁÈ¡Êı¾İµÄ»º³å³Ø´óĞ¡ */
+    /** ç½‘ç»œä¸­è¯»å–æ•°æ®çš„ç¼“å†²æ± å¤§å° */
     public static final Integer NET_BUFFER = 1024;
 
-    /** Á¬½ÓÖ÷»úµÄÓòÃû */
+    /** è¿æ¥ä¸»æœºçš„åŸŸå */
     public static final String HOST = "localhost";
 
-    /** Á´½ÓÖ÷»úµÄ IP */
+    /** é“¾æ¥ä¸»æœºçš„ IP */
     public static final String HOST_IP = "127.0.0.1";
 
 
-    /** ÉèÖÃ³¬Ê±Ê±¼ä */
+    /** è®¾ç½®è¶…æ—¶æ—¶é—´ */
     public static final int TIMEOUT = 1;
 
-    /** ÉèÖÃ 1000 µÄ³¬Ê±Ê±¼ä */
+    /** è®¾ç½® 1000 çš„è¶…æ—¶æ—¶é—´ */
     public static final int TIMEOUT_THOUSAND = 1000;
 }

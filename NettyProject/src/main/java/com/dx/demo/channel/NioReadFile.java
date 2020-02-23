@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -16,21 +16,21 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Ê¹ÓÃ NIO Channel ÔÚÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ
+ * ä½¿ç”¨ NIO Channel åœ¨æ–‡ä»¶ä¸­è¯»å–æ•°æ®
  *
  * @author daixiao
  */
 public class NioReadFile {
 
-    /** ¼ÇÂ¼ÈÕÖ¾µÄ¶ÔÏó */
+    /** è®°å½•æ—¥å¿—çš„å¯¹è±¡ */
     private static Log log = LogFactory.getLog(NioReadFile.class);
 
     public static void main(String[] args) {
-        // 1. »ñÈ¡ÒÑ¾­´æÔÚµÄÒ»¸öÎÄ¼ş
+        // 1. è·å–å·²ç»å­˜åœ¨çš„ä¸€ä¸ªæ–‡ä»¶
         try (FileInputStream inputStream = new FileInputStream(new File("hello.txt"))) {
-            // »ñÈ¡ÎÄ¼şÖĞµÄ channel
+            // è·å–æ–‡ä»¶ä¸­çš„ channel
             FileChannel fileChannel = inputStream.getChannel();
-            // ×¼±¸»º³åÇø buffer £¬ ²¢ÏòÆäÖĞ¶ÁÈëÊı¾İ
+            // å‡†å¤‡ç¼“å†²åŒº buffer ï¼Œ å¹¶å‘å…¶ä¸­è¯»å…¥æ•°æ®
             ByteBuffer buffer = ByteBuffer.allocate((int) (new File("hello.txt").length()));
             fileChannel.read(buffer);
             log.warn(new String(buffer.array(), StandardCharsets.UTF_8));

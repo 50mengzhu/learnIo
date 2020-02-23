@@ -5,8 +5,29 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95bd1658-3eac-47f5-a968-feecfe1c94d7" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="95bd1658-3eac-47f5-a968-feecfe1c94d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dx/nio/groupchat/GroupClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dx/nio/groupchat/GroupConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dx/nio/groupchat/GroupServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NettyProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NettyProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/bio/BioServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/bio/BioServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/buffer/BufferDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/buffer/BufferDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/BufferScattingAndGathering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/BufferScattingAndGathering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioCopyFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioCopyFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioCopyFileUsingBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioCopyFileUsingBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioMappedBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioMappedBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioWriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/channel/NioWriteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ClientSelectorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ClientSelectorDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ServerSelectorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ServerSelectorDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dx/io/NetConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dx/io/NetConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dx/bio/BioServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dx/bio/BioServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dx/bio/BioServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dx/bio/BioServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dx/io/NetConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dx/io/NetConstants.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,44 +39,51 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1WYFIsRWXZTPrBaVyk5xzKNMES9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.dx.nio" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="BioServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dx.bio.BioServer" />
+  <component name="RunManager" selected="Application.GroupClient">
+    <configuration name="BufferScattingAndGathering" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dx.demo.channel.BufferScattingAndGathering" />
       <module name="NettyProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dx.bio.*" />
+          <option name="PATTERN" value="com.dx.demo.channel.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,11 +91,86 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClientSelectorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dx.demo.selector.ClientSelectorDemo" />
+      <module name="NettyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dx.demo.selector.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dx.nio.groupchat.GroupClient" />
+      <module name="NettyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dx.nio.groupchat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dx.nio.groupchat.GroupServer" />
+      <module name="NettyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dx.nio.groupchat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerSelectorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dx.demo.selector.ServerSelectorDemo" />
+      <module name="NettyProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dx.demo.selector.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BufferScattingAndGathering" />
+      <item itemvalue="Application.ClientSelectorDemo" />
+      <item itemvalue="Application.GroupClient" />
+      <item itemvalue="Application.GroupServer" />
+      <item itemvalue="Application.ServerSelectorDemo" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BioServer" />
+        <item itemvalue="Application.GroupClient" />
+        <item itemvalue="Application.GroupServer" />
+        <item itemvalue="Application.ClientSelectorDemo" />
+        <item itemvalue="Application.ServerSelectorDemo" />
+        <item itemvalue="Application.BufferScattingAndGathering" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -80,10 +183,142 @@
       <option name="presentableId" value="Default" />
       <updated>1579318544460</updated>
       <workItem from="1579318546303" duration="4455000" />
+      <workItem from="1579699171260" duration="4635000" />
+      <workItem from="1579931957682" duration="1178000" />
+      <workItem from="1579955895978" duration="1501000" />
+      <workItem from="1579957904988" duration="4735000" />
+      <workItem from="1580022673010" duration="7230000" />
+      <workItem from="1580122186096" duration="3473000" />
+      <workItem from="1580173120630" duration="20448000" />
+      <workItem from="1580294082687" duration="5303000" />
+      <workItem from="1580360802395" duration="6117000" />
+      <workItem from="1580556973617" duration="257000" />
+      <workItem from="1581836602926" duration="2905000" />
+      <workItem from="1581856755159" duration="1275000" />
+      <workItem from="1581913688449" duration="1030000" />
+      <workItem from="1581938251517" duration="12986000" />
+      <workItem from="1581987507457" duration="112000" />
+      <workItem from="1582014711681" duration="17000" />
+      <workItem from="1582447794841" duration="765000" />
+      <workItem from="1582449789342" duration="699000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="248" key="#Project_Structure" timestamp="1580272294704">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="505" y="248" key="#Project_Structure/0.0.1824.1176@0.0.1824.1176" timestamp="1580272294704" />
+    <state x="368" y="244" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581951870589">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="368" y="244" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1581951870589" />
+    <state x="718" y="299" key="#com.intellij.ide.util.MemberChooser" timestamp="1579960208533">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="718" y="299" key="#com.intellij.ide.util.MemberChooser/0.0.1824.1176@0.0.1824.1176" timestamp="1579960208533" />
+    <state x="593" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582449389185">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="593" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1582449389185" />
+    <state x="587" y="581" key="#xdebugger.evaluate" timestamp="1580370459647">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="587" y="581" key="#xdebugger.evaluate/0.0.1824.1176@0.0.1824.1176" timestamp="1580370459647" />
+    <state x="657" y="444" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1580122530653">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="657" y="444" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1824.1176@0.0.1824.1176" timestamp="1580122530653" />
+    <state x="456" y="179" key="CommitChangelistDialog2" timestamp="1580022226753">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="456" y="179" key="CommitChangelistDialog2/0.0.1824.1176@0.0.1824.1176" timestamp="1580022226753" />
+    <state x="176" y="107" key="DiffContextDialog" timestamp="1580022223800">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="176" y="107" key="DiffContextDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1580022223800" />
+    <state x="693" y="344" key="FileChooserDialogImpl" timestamp="1580557257996">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="693" y="344" key="FileChooserDialogImpl/0.0.1824.1176@0.0.1824.1176" timestamp="1580557257996" />
+    <state width="1172" height="445" key="GridCell.Tab.0.bottom" timestamp="1581987452058">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1172" height="445" key="GridCell.Tab.0.bottom/0.0.1824.1176@0.0.1824.1176" timestamp="1581987452058" />
+    <state width="1172" height="445" key="GridCell.Tab.0.center" timestamp="1581987452058">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1172" height="445" key="GridCell.Tab.0.center/0.0.1824.1176@0.0.1824.1176" timestamp="1581987452058" />
+    <state width="1172" height="445" key="GridCell.Tab.0.left" timestamp="1581987452058">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1172" height="445" key="GridCell.Tab.0.left/0.0.1824.1176@0.0.1824.1176" timestamp="1581987452058" />
+    <state width="1172" height="445" key="GridCell.Tab.0.right" timestamp="1581987452058">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1172" height="445" key="GridCell.Tab.0.right/0.0.1824.1176@0.0.1824.1176" timestamp="1581987452058" />
+    <state width="1781" height="221" key="GridCell.Tab.1.bottom" timestamp="1580442977180">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1781" height="221" key="GridCell.Tab.1.bottom/0.0.1824.1176@0.0.1824.1176" timestamp="1580442977180" />
+    <state width="1781" height="221" key="GridCell.Tab.1.center" timestamp="1580442977180">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1781" height="221" key="GridCell.Tab.1.center/0.0.1824.1176@0.0.1824.1176" timestamp="1580442977180" />
+    <state width="1781" height="221" key="GridCell.Tab.1.left" timestamp="1580442977180">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1781" height="221" key="GridCell.Tab.1.left/0.0.1824.1176@0.0.1824.1176" timestamp="1580442977180" />
+    <state width="1781" height="221" key="GridCell.Tab.1.right" timestamp="1580442977180">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state width="1781" height="221" key="GridCell.Tab.1.right/0.0.1824.1176@0.0.1824.1176" timestamp="1580442977180" />
+    <state x="608" y="300" key="RollbackChangesDialog" timestamp="1579955968336">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="608" y="300" key="RollbackChangesDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1579955968336" />
+    <state x="218" y="247" key="SettingsEditor" timestamp="1582449897796">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="218" y="247" key="SettingsEditor/0.0.1824.1176@0.0.1824.1176" timestamp="1582449897796" />
+    <state x="634" y="330" width="540" height="524" key="StructurePopup" timestamp="1580182455715">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="634" y="330" width="540" height="524" key="StructurePopup/0.0.1824.1176@0.0.1824.1176" timestamp="1580182455715" />
+    <state x="596" y="413" key="com.intellij.ide.util.TipDialog" timestamp="1579699192788">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="596" y="413" key="com.intellij.ide.util.TipDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1579699192788" />
+    <state x="593" y="321" width="638" height="534" key="find.popup" timestamp="1581945689906">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="593" y="321" width="638" height="534" key="find.popup/0.0.1824.1176@0.0.1824.1176" timestamp="1581945689906" />
+    <state x="569" y="275" width="672" height="677" key="run.anything.popup" timestamp="1581951060803">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="569" y="275" width="672" height="677" key="run.anything.popup/0.0.1824.1176@0.0.1824.1176" timestamp="1581951060803" />
+    <state x="575" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581913784826">
+      <screen x="0" y="0" width="1824" height="1176" />
+    </state>
+    <state x="575" y="259" width="672" height="678" key="search.everywhere.popup/0.0.1824.1176@0.0.1824.1176" timestamp="1581913784826" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ServerSelectorDemo.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dx/demo/selector/ServerSelectorDemo.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

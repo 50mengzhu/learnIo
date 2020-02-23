@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -16,35 +16,35 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Ê¹ÓÃ NIO µÄ·½Ê½ÏòÎÄ¼şÖĞĞ´ÈëÊı¾İ
+ * ä½¿ç”¨ NIO çš„æ–¹å¼å‘æ–‡ä»¶ä¸­å†™å…¥æ•°æ®
  *
  * @author daixiao
  */
 public class NioWriteFile {
 
-    /** ´ıÏòÎÄ¼şÖĞĞ´ÈëµÄ×Ö·û´® */
+    /** å¾…å‘æ–‡ä»¶ä¸­å†™å…¥çš„å­—ç¬¦ä¸² */
     private static String str2File = "Hello world!";
 
-    /** ¼ÇÂ¼ÈÕÖ¾µÄ¶ÔÏó */
+    /** è®°å½•æ—¥å¿—çš„å¯¹è±¡ */
     private static Log log = LogFactory.getLog(NioWriteFile.class);
 
     /**
-     * Êµ¼ÊÉÏÕâ¸ö FileChannel ÕæÊµÀàĞÍÊÇ FileChannelImpl
+     * å®é™…ä¸Šè¿™ä¸ª FileChannel çœŸå®ç±»å‹æ˜¯ FileChannelImpl
      * @see {sun.nio.ch.FileChannelImpl}
-     * @param args ÃüÁîĞĞ²ÎÊı
+     * @param args å‘½ä»¤è¡Œå‚æ•°
      */
     public static void main(String[] args) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(new File("hello.txt"))) {
-            // 1. Ê×ÏÈ´´½¨Ò»¸ö¹ØÓÚÎÄ¼şµÈ´ıÊäÈë
+            // 1. é¦–å…ˆåˆ›å»ºä¸€ä¸ªå…³äºæ–‡ä»¶ç­‰å¾…è¾“å…¥
 
-            // 2. ½«ÒÔÉÏµÄÎÄ¼şÁ÷×ª»»Îª channel
-            // Êµ¼ÊÉÏÕâ¸ö FileChannel ÕæÊµÀàĞÍÊÇ FileChannelImpl
+            // 2. å°†ä»¥ä¸Šçš„æ–‡ä»¶æµè½¬æ¢ä¸º channel
+            // å®é™…ä¸Šè¿™ä¸ª FileChannel çœŸå®ç±»å‹æ˜¯ FileChannelImpl
             FileChannel fileChannel = fileOutputStream.getChannel();
 
-            // 3. ´´½¨Ò»¸ö»º³åÇø£¬²¢°ÑÊı¾İĞ´Èë buffer ÖĞ
+            // 3. åˆ›å»ºä¸€ä¸ªç¼“å†²åŒºï¼Œå¹¶æŠŠæ•°æ®å†™å…¥ buffer ä¸­
             ByteBuffer buffer = ByteBuffer.allocate(1024);
             buffer.put(str2File.getBytes(StandardCharsets.UTF_8));
-            // ×¢Òâ¶ÔÓÚ buffer ¶ÁĞ´Íê³ÉÖ®ºóĞèÒª½« buffer ·´×ªÒ»ÏÂ
+            // æ³¨æ„å¯¹äº buffer è¯»å†™å®Œæˆä¹‹åéœ€è¦å°† buffer åè½¬ä¸€ä¸‹
             buffer.flip();
             fileChannel.write(buffer);
         } catch (FileNotFoundException e) {

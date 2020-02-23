@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.buffer;
 
@@ -10,30 +10,30 @@ import org.apache.commons.logging.LogFactory;
 import java.nio.IntBuffer;
 
 /**
- * Buffer µÄÊ¹ÓÃÊµÀı
+ * Buffer çš„ä½¿ç”¨å®ä¾‹
  *
  * @author daixiao
  */
 public class BufferDemo {
 
-    /** ¼ÇÂ¼ÈÕÖ¾µÄ¶ÔÏó */
+    /** è®°å½•æ—¥å¿—çš„å¯¹è±¡ */
     private static Log log = LogFactory.getLog(BufferDemo.class);
 
-    /** buffer µÄ´óĞ¡ */
+    /** buffer çš„å¤§å° */
     private static int SIZE = 5;
 
     public static void main(String[] args) {
-        // Ê×ÏÈ·ÖÅä SIZE ´óĞ¡µÄ Buffer ´óĞ¡
+        // é¦–å…ˆåˆ†é… SIZE å¤§å°çš„ Buffer å¤§å°
         IntBuffer intBuffer = IntBuffer.allocate(SIZE);
 
         for (int i = 0; i < intBuffer.capacity(); ++ i) {
             intBuffer.put(i * 2);
         }
 
-        // ×¢ÒâÔÚ¶ÁĞ´×ª»»µÄÊ±ºòĞèÒªµ÷ÓÃÕâ¸ö·½·¨
+        // æ³¨æ„åœ¨è¯»å†™è½¬æ¢çš„æ—¶å€™éœ€è¦è°ƒç”¨è¿™ä¸ªæ–¹æ³•
         intBuffer.flip();
 
-        // ÅĞ¶Ï intBuffer ÊÇ·ñº¬ÓĞÊ£ÏÂµÄÔªËØ
+        // åˆ¤æ–­ intBuffer æ˜¯å¦å«æœ‰å‰©ä¸‹çš„å…ƒç´ 
         while (intBuffer.hasRemaining()) {
             log.info(intBuffer.get());
         }

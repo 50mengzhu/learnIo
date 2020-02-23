@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -14,28 +14,28 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * Ê¹ÓÃ MappedByteBuffer Õâ¸öÀà¶ÔÎÄ¼ş½øĞĞĞŞ¸Ä£¬ÔÚ¶ÑÍâÄÚ´æ½øĞĞĞŞ¸Ä
- * ²Ù×÷ÏµÍ³²»ĞèÒª¶ÔÎÄ¼ş½øĞĞ¿½±´
+ * ä½¿ç”¨ MappedByteBuffer è¿™ä¸ªç±»å¯¹æ–‡ä»¶è¿›è¡Œä¿®æ”¹ï¼Œåœ¨å †å¤–å†…å­˜è¿›è¡Œä¿®æ”¹
+ * æ“ä½œç³»ç»Ÿä¸éœ€è¦å¯¹æ–‡ä»¶è¿›è¡Œæ‹·è´
  *
  * @author daixiao
  */
 public class NioMappedBuffer {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ */
     private static Log log = LogFactory.getLog(NioMappedBuffer.class);
 
     public static void main(String[] args) {
-        // ¿ÉÒÔÊ¹ÓÃ RandomAccessFile ¿ÉÒÔÖ±½Ó¶ÔÎÄ¼ş½øĞĞĞŞ¸Ä
-        // ÅäºÏ¸ÃÀàÖĞ°üº¬µÄ channel ½øĞĞĞŞ¸Ä
+        // å¯ä»¥ä½¿ç”¨ RandomAccessFile å¯ä»¥ç›´æ¥å¯¹æ–‡ä»¶è¿›è¡Œä¿®æ”¹
+        // é…åˆè¯¥ç±»ä¸­åŒ…å«çš„ channel è¿›è¡Œä¿®æ”¹
         try (RandomAccessFile file = new RandomAccessFile("hello.txt", "rw")) {
             FileChannel channel = file.getChannel();
-            // ËµÃ÷Ò»ÏÂ channel.map µÄÈı¸ö²ÎÊıµÄ¾ßÌåº¬Òå
-            // ²ÎÊıÒ»£ºĞŞ¸ÄÎÄ¼şµÄÄ£Ê½£¬Ö÷ÒªÊÇ¶Á/Ğ´
-            // ²ÎÊı¶ş£ºÎÄ¼şĞŞ¸ÄµÄÆğÊ¼Î»ÖÃ£¬ÆğÊ¼ÏÂ±ê
-            // ²ÎÊıÈı£ºÎÄ¼şĞŞ¸ÄµÄ×Ö½ÚÊıÁ¿
+            // è¯´æ˜ä¸€ä¸‹ channel.map çš„ä¸‰ä¸ªå‚æ•°çš„å…·ä½“å«ä¹‰
+            // å‚æ•°ä¸€ï¼šä¿®æ”¹æ–‡ä»¶çš„æ¨¡å¼ï¼Œä¸»è¦æ˜¯è¯»/å†™
+            // å‚æ•°äºŒï¼šæ–‡ä»¶ä¿®æ”¹çš„èµ·å§‹ä½ç½®ï¼Œèµ·å§‹ä¸‹æ ‡
+            // å‚æ•°ä¸‰ï¼šæ–‡ä»¶ä¿®æ”¹çš„å­—èŠ‚æ•°é‡
             MappedByteBuffer mappedByteBuffer = channel.map(FileChannel.MapMode.READ_WRITE, 0, 5);
 
-            // ½«Ô­±¾ÎÄ¼şÖĞµÄµÚÒ»¸ö×Ö½ÚÌæ»»Îª J
+            // å°†åŸæœ¬æ–‡ä»¶ä¸­çš„ç¬¬ä¸€ä¸ªå­—èŠ‚æ›¿æ¢ä¸º J
             mappedByteBuffer.put(0, (byte) 'J');
         } catch (FileNotFoundException e) {
             log.warn("file not found!", e);

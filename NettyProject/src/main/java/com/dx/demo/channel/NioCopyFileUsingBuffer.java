@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -16,20 +16,20 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * Ê¹ÓÃ NIO ½øĞĞÎÄ¼şÖ®¼äÄÚÈİµÄÏà»¥¿½±´
- * Ê¹ÓÃ Buffer ½øĞĞÎÄ¼şµÄÔİ´æ
+ * ä½¿ç”¨ NIO è¿›è¡Œæ–‡ä»¶ä¹‹é—´å†…å®¹çš„ç›¸äº’æ‹·è´
+ * ä½¿ç”¨ Buffer è¿›è¡Œæ–‡ä»¶çš„æš‚å­˜
  *
  * @author daixiao
  */
 public class NioCopyFileUsingBuffer {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ */
     private static Log log = LogFactory.getLog(NioCopyFileUsingBuffer.class);
 
-    /** Ã¿´Î¶ÁÎÄ¼şµÄ»º³åÇøµÄ´óĞ¡ */
+    /** æ¯æ¬¡è¯»æ–‡ä»¶çš„ç¼“å†²åŒºçš„å¤§å° */
     private static final int BUFFER_SIZE = 1024;
 
-    /** ÎÄ¼ş½áÎ² */
+    /** æ–‡ä»¶ç»“å°¾ */
     private static final int EOF = -1;
 
     public static void main(String[] args) {
@@ -39,16 +39,16 @@ public class NioCopyFileUsingBuffer {
             ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
 
             while (true) {
-                // ¶ÁÈ¡Ö®Ç°ĞèÒª½« buffer ÖĞµÄËÄ¸öÊôĞÔ½øĞĞ»¹Ô­µÄ²Ù×÷
-                // ±ØĞëÖ´ĞĞ£¬·ñÔòµ±Ö´ĞĞÍê¶ÁÈ¡Ö®ºó£¬position ºÍ limit ÏàµÈ
-                // ·µ»ØµÄ¶ÁÈ¡ÊıÁ¿Ê¼ÖÕÎª0
+                // è¯»å–ä¹‹å‰éœ€è¦å°† buffer ä¸­çš„å››ä¸ªå±æ€§è¿›è¡Œè¿˜åŸçš„æ“ä½œ
+                // å¿…é¡»æ‰§è¡Œï¼Œå¦åˆ™å½“æ‰§è¡Œå®Œè¯»å–ä¹‹åï¼Œposition å’Œ limit ç›¸ç­‰
+                // è¿”å›çš„è¯»å–æ•°é‡å§‹ç»ˆä¸º0
                 buffer.clear();
-                // ½« channel ÖĞµÄÊı¾İ¶Áµ½ buffer ÖĞ
+                // å°† channel ä¸­çš„æ•°æ®è¯»åˆ° buffer ä¸­
                 int read = fileChannel.read(buffer);
                 if (read == EOF) {
                     break;
                 }
-                // ·´×ª buffer ÓÃÓÚÍê³ÉÊı¾İµÄĞ´Èë
+                // åè½¬ buffer ç”¨äºå®Œæˆæ•°æ®çš„å†™å…¥
                 buffer.flip();
                 FileChannel channel = outputStream.getChannel();
                 channel.write(buffer);

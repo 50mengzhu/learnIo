@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.channel;
 
@@ -17,67 +17,67 @@ import java.util.Arrays;
 import static com.dx.io.NetConstants.SERVER_PORT;
 
 /**
- * ¿ÉÒÔÊ¹ÓÃÒ»¸ö Buffer Êı×é½øĞĞÊı¾İµÄ½ÓÊÕ
- * Ò²¾ÍÊÇµ±Ò»¸ö Buffer ²»¹»µÄÊ±ºò¿ÉÒÔ²ÉÓÃ Buffer Êı×é½øĞĞ¶ÁÈ¡ÒÔÌá¸ß¶ÁĞ´ËÙ¶È
+ * å¯ä»¥ä½¿ç”¨ä¸€ä¸ª Buffer æ•°ç»„è¿›è¡Œæ•°æ®çš„æ¥æ”¶
+ * ä¹Ÿå°±æ˜¯å½“ä¸€ä¸ª Buffer ä¸å¤Ÿçš„æ—¶å€™å¯ä»¥é‡‡ç”¨ Buffer æ•°ç»„è¿›è¡Œè¯»å–ä»¥æé«˜è¯»å†™é€Ÿåº¦
  *
  * @author daixiao
  */
 public class BufferScattingAndGathering {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ */
     private static Log log = LogFactory.getLog(BufferScattingAndGathering.class);
 
-    /** µÚÒ»¸ö Buffer µÄ´óĞ¡ */
+    /** ç¬¬ä¸€ä¸ª Buffer çš„å¤§å° */
     private static final int FIRST_BUFFER_SIZE = 5;
 
-    /** µÚ¶ş¸ö Buffer µÄ´óĞ¡ */
+    /** ç¬¬äºŒä¸ª Buffer çš„å¤§å° */
     private static final int SECOND_BUFFER_SIZE = 3;
 
     public static void main(String[] args) {
 
-        // ×¨ÃÅ´´½¨Ò»¸ö ServerSocketChannel ÓÃÓÚ°ó¶¨·şÎñÆ÷¶ËµÄÊı¾İ
+        // ä¸“é—¨åˆ›å»ºä¸€ä¸ª ServerSocketChannel ç”¨äºç»‘å®šæœåŠ¡å™¨ç«¯çš„æ•°æ®
         try {
             ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
             serverSocketChannel.socket().bind(new InetSocketAddress(SERVER_PORT));
             log.info(String.format("server listen at port %d ...", SERVER_PORT));
 
-            // ´´½¨Ò»¸ö SocketChannel ×¨ÃÅÓÃÓÚºÍ¿Í»§¶ËµÄÍ¨ĞÅ
+            // åˆ›å»ºä¸€ä¸ª SocketChannel ä¸“é—¨ç”¨äºå’Œå®¢æˆ·ç«¯çš„é€šä¿¡
             SocketChannel socketChannel = serverSocketChannel.accept();
             log.info(String.format("client %s connect!", socketChannel.getLocalAddress()));
 
-            // Ê¹ÓÃÒ»¸ö buffer Êı×é¶Ô´«ÊäµÄÊı¾İ½øĞĞ½ÓÊÕÓëÔİ´æ
+            // ä½¿ç”¨ä¸€ä¸ª buffer æ•°ç»„å¯¹ä¼ è¾“çš„æ•°æ®è¿›è¡Œæ¥æ”¶ä¸æš‚å­˜
             ByteBuffer[] buffers = new ByteBuffer[2];
             buffers[0] = ByteBuffer.allocate(FIRST_BUFFER_SIZE);
             buffers[1] = ByteBuffer.allocate(SECOND_BUFFER_SIZE);
 
-            // ×îĞ¡¶ÁÈ¡µÄÊıÁ¿£¬Èç¹û buffer ÖĞ²»³¬¹ıÕâ¸ö´óĞ¡£¬ÄÇÃ´²»½øĞĞ¶ÁÈ¡
+            // æœ€å°è¯»å–çš„æ•°é‡ï¼Œå¦‚æœ buffer ä¸­ä¸è¶…è¿‡è¿™ä¸ªå¤§å°ï¼Œé‚£ä¹ˆä¸è¿›è¡Œè¯»å–
             int msgMinLength = 8;
 
             while (true) {
-                // ´Ó buffer ÖĞ¶ÁÈ¡µÄ×Ö½ÚÊıÁ¿
+                // ä» buffer ä¸­è¯»å–çš„å­—èŠ‚æ•°é‡
                 int byteRead = 0;
-                // Èç¹û¶ÁÈ¡µ½µÄÊı¾İĞ¡ÓÚ×îĞ¡µÄ¿É¶ÁµÄ×Ö½ÚÊı
-                // ÄÇÃ´¾Í¼ÌĞøµÈ´ıÏò Buffer ÖĞĞ´ÈëµÄÊı¾İ
+                // å¦‚æœè¯»å–åˆ°çš„æ•°æ®å°äºæœ€å°çš„å¯è¯»çš„å­—èŠ‚æ•°
+                // é‚£ä¹ˆå°±ç»§ç»­ç­‰å¾…å‘ Buffer ä¸­å†™å…¥çš„æ•°æ®
                 while (byteRead < msgMinLength) {
                     long read = socketChannel.read(buffers);
                     byteRead += read;
                 }
-                // Ê¹ÓÃ Stream ·½Ê½´òÓ¡³öËùÓĞµÄ buffer µÄ position ºÍ limit
+                // ä½¿ç”¨ Stream æ–¹å¼æ‰“å°å‡ºæ‰€æœ‰çš„ buffer çš„ position å’Œ limit
                 Arrays.asList(buffers).stream().forEach(buffer -> {
                     log.info("position = " + buffer.position() + " , limit = " + buffer.limit());
                 });
 
-                // Ê¹ÓÃ stream µÄ·½Ê½Íê³É buffer µÄ·´×ª
+                // ä½¿ç”¨ stream çš„æ–¹å¼å®Œæˆ buffer çš„åè½¬
                 Arrays.asList(buffers).forEach(buffer -> buffer.flip());
 
-                // Ïò¿Í»§¶Ë·¢ËÍÊı¾İ
+                // å‘å®¢æˆ·ç«¯å‘é€æ•°æ®
                 int byteWrite = 0;
                 while (byteWrite < msgMinLength) {
                     long write = socketChannel.write(buffers);
                     byteWrite += write;
                 }
 
-                // ÒÀ´ÎÖØÖÃËùÓĞµÄ buffer
+                // ä¾æ¬¡é‡ç½®æ‰€æœ‰çš„ buffer
                 Arrays.asList(buffers).forEach(buffer -> buffer.clear());
             }
         } catch (IOException e) {

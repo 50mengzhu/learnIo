@@ -1,6 +1,6 @@
 /**
  * copyright@daixiao
- * file encoding: gbk
+ * file encoding: utf-8
  */
 package com.dx.demo.selector;
 
@@ -22,58 +22,59 @@ import static com.dx.io.NetConstants.SERVER_PORT;
 import static com.dx.io.NetConstants.TIMEOUT_THOUSAND;
 
 /**
- * Ê¹ÓÃ Selector ½øĞĞ·şÎñÆ÷¶ËµÄ¶àÂ·¸´ÓÃ
+ * ä½¿ç”¨ Selector è¿›è¡ŒæœåŠ¡å™¨ç«¯çš„å¤šè·¯å¤ç”¨
  *
  * @author daixiao
  */
 public class ServerSelectorDemo {
 
-    /** ÈÕÖ¾¼ÇÂ¼¶ÔÏó */
+    /** æ—¥å¿—è®°å½•å¯¹è±¡ */
     private static Log log = LogFactory.getLog(ServerSelectorDemo.class);
 
     public static void main(String[] args) {
-        // 1. Ê×ÏÈ´´½¨Ò»¸ö·şÎñ¶ËµÄ channel
-        // ½«·şÎñÆ÷¶Ë channel °ó¶¨¶ÔÓ¦µÄ¶Ë¿Ú£¬
-        // ÉèÖÃ·şÎñÆ÷¶Ë channel Îª·Ç×èÈû£¬²¢½«Æä×¢²áµ½¶ÔÓ¦µÄ selector ÉÏ
+        // 1. é¦–å…ˆåˆ›å»ºä¸€ä¸ªæœåŠ¡ç«¯çš„ channel
+        // å°†æœåŠ¡å™¨ç«¯ channel ç»‘å®šå¯¹åº”çš„ç«¯å£ï¼Œ
+        // è®¾ç½®æœåŠ¡å™¨ç«¯ channel ä¸ºéé˜»å¡ï¼Œå¹¶å°†å…¶æ³¨å†Œåˆ°å¯¹åº”çš„ selector ä¸Š
 
-        // 2. ´´½¨Ò»¸ö Ñ¡ÔñÆ÷ selector ÓÃÓÚ¼àÌı channel ÖĞµÄÊÂ¼ş
+        // 2. åˆ›å»ºä¸€ä¸ª é€‰æ‹©å™¨ selector ç”¨äºç›‘å¬ channel ä¸­çš„äº‹ä»¶
         try (ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
              Selector selector = Selector.open()) {
             serverSocketChannel.socket().bind(new InetSocketAddress(SERVER_PORT));
             serverSocketChannel.configureBlocking(false);
             serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-            // 3. ×¼±¸Ñ­»·½ÓÊÕÀ´×Ô¿Í»§¶ËµÄ Á¬½Ó
+            // 3. å‡†å¤‡å¾ªç¯æ¥æ”¶æ¥è‡ªå®¢æˆ·ç«¯çš„ è¿æ¥
             while (true) {
-                // µÈ´ı 1 ms Èç¹ûÃ»ÓĞÊÂ¼ş£¬ÄÇÃ´¾Í¼ÌĞø×¼±¸¼àÌı
+                // ç­‰å¾… 1 ms å¦‚æœæ²¡æœ‰äº‹ä»¶ï¼Œé‚£ä¹ˆå°±ç»§ç»­å‡†å¤‡ç›‘å¬
                 if (selector.select(TIMEOUT_THOUSAND) == 0) {
                     log.info(String.format("server has been waiting %dms", TIMEOUT_THOUSAND));
                     continue;
                 }
 
-                // ÄÜ½øµ½ÕâÀïËµÃ÷ÒÑ¾­¼àÌıµ½ channel ÖĞ´æÔÚÊÂ¼ş
-                // »ñÈ¡ËùÓĞµÄ¼àÌıµÄÊÂ¼ş£¬×ª»»Îªµü´úÆ÷ÀàĞÍ±ãÓÚ±éÀú
+                // èƒ½è¿›åˆ°è¿™é‡Œè¯´æ˜å·²ç»ç›‘å¬åˆ° channel ä¸­å­˜åœ¨äº‹ä»¶
+                // è·å–æ‰€æœ‰çš„ç›‘å¬çš„äº‹ä»¶ï¼Œè½¬æ¢ä¸ºè¿­ä»£å™¨ç±»å‹ä¾¿äºéå†
                 Set<SelectionKey> keySet = selector.selectedKeys();
                 Iterator<SelectionKey> keyIterator = keySet.iterator();
-                // ±éÀúËùÓĞµÄÊÂ¼ş
+                // éå†æ‰€æœ‰çš„äº‹ä»¶
                 while (keyIterator.hasNext()) {
                     SelectionKey key = keyIterator.next();
 
                     if (key.isAcceptable()) {
-                        // Í¨¹ı SelectionKey ºÍ channel µÄ¶ÔÓ¦¹ØÏµÍê³É´¦Àí
+                        // é€šè¿‡ SelectionKey å’Œ channel çš„å¯¹åº”å…³ç³»å®Œæˆå¤„ç†
                         SocketChannel socketChannel = serverSocketChannel.accept();
                         socketChannel.configureBlocking(false);
                         socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(1024));
-                    } else if (key.isReadable()) {
+                    }
+                    if (key.isReadable()) {
                         SocketChannel socketChannel = (SocketChannel) key.channel();
-                        // »ñÈ¡ key ÖĞµÄ buffer
+                        // è·å– key ä¸­çš„ buffer
                         ByteBuffer buffer = (ByteBuffer) key.attachment();
                         socketChannel.read(buffer);
                         log.info(new String(buffer.array(), StandardCharsets.UTF_8));
                         buffer.clear();
                     }
 
-                    // ×¢Òâ£¡Íê³ÉÖ®ºóĞèÒª½«´¦ÀíÍê³ÉµÄ key ÒÆ³ı
+                    // æ³¨æ„ï¼å®Œæˆä¹‹åéœ€è¦å°†å¤„ç†å®Œæˆçš„ key ç§»é™¤
                     keyIterator.remove();
                 }
             }
