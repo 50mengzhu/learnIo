@@ -4,8 +4,13 @@
  */
 package com.dx.netty.server;
 
+import static com.dx.io.NetConstants.SERVER_PORT;
+
+import com.dx.netty.handler.MyNettyServerHandler;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -14,10 +19,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import com.dx.netty.handler.MyNettyServerHandler;
-
-import static com.dx.io.NetConstants.SERVER_PORT;
 
 /**
  * 一个简单的 netty 服务端程序
@@ -41,7 +42,7 @@ public class SimpleNettyServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline().addLast(new MyNettyServerHandler());
+                            socketChannel.pipeline().addLast((ChannelHandler) new MyNettyServerHandler());
                         }
                     });
 
